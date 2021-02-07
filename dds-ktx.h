@@ -907,9 +907,11 @@ static bool ddsktx__parse_ktx(ddsktx_texture_info* tc, const void* file_data, in
         ddsktx__err(err, "ktx; header size does not match");
     }
 
+#if 0
     if (ddsktx_memcmp(header.id, ktx__id, sizeof(header.id)) != 0) {
         ddsktx__err(err, "ktx: invalid file header");
     }
+#endif
 
     // TODO: support big endian
     if (header.endianess != 0x04030201) {
